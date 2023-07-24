@@ -20,6 +20,8 @@ public class CalculatorScreen {
     AndroidElement btnMul;
     @FindBy(id = "com.google.android.calculator:id/result_preview")
     AndroidElement previewRes;
+    @FindBy(id = "com.google.android.calculator:id/clr")
+    AndroidElement clearScrn;
 
     public CalculatorScreen(AndroidDriver driver){
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
