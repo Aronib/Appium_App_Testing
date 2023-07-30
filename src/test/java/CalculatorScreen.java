@@ -22,6 +22,10 @@ public class CalculatorScreen {
     AndroidElement previewRes;
     @FindBy(id = "com.google.android.calculator:id/clr")
     AndroidElement clearScrn;
+    @FindBy(id = "com.google.android.calculator:id/eq")
+    AndroidElement eql;
+    @FindBy(id = "com.google.android.calculator:id/result_final")
+    AndroidElement finalRes;
 
     public CalculatorScreen(AndroidDriver driver){
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -31,6 +35,15 @@ public class CalculatorScreen {
         btn5.click();
         btnMul.click();
         btn9.click();
-        return previewRes.getText();
+        eql.click();
+        return finalRes.getText();
+
+    }
+    public String Div (){
+        btn9.click();
+        btnDiv.click();
+        btn5.click();
+        eql.click();
+        return finalRes.getText();
     }
 }
